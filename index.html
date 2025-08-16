@@ -33,7 +33,8 @@
         /* --- One-Page Moving Image Background Container --- */
         .one-page-container {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -42,11 +43,11 @@
             padding: 1rem;
             box-sizing: border-box;
             background: var(--bg-color); /* Fallback color */
-            
             /* Background Image with subtle motion */
             background-image: url('https://img.freepik.com/premium-photo/blurred-lights-new-york-city-night-view_961875-44181.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             animation: bg-pan 60s linear infinite alternate;
         }
 
@@ -137,6 +138,16 @@
         }
         
         @keyframes bg-pan {
+        /* Responsive fix for mobile background */
+        @media (max-width: 600px) {
+            .one-page-container {
+                min-height: 100vh;
+                width: 100vw;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
@@ -148,6 +159,16 @@
 
             
         }
+                /* Responsive fix for mobile background */
+                @media (max-width: 600px) {
+                    .one-page-container {
+                        min-height: 100vh;
+                        width: 100vw;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
     </style>
 </head>
 <body>
@@ -157,7 +178,7 @@
      <div class="text-box-overlay">
     <header class="hero">
         <div class="hero-content">
-                <img src="WEB/eye.PNG" alt="Evil Eye Logo" style="width:400px; height: auto; display:block; margin: 0 auto 0px auto; transform: translateX(-7px);">
+                <img src="WEB/eye.PNG" alt="Evil Eye Logo" style="width:400px; height: auto; display:block; margin: 0 auto 0px auto;">
             <h2>I See You NYC</h2>
             <h3>Your spark, unleashed.</h3>
         </div>
