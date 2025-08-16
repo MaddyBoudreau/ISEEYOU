@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I See You NYC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling --- */
+        :root {
+            --bg-color: #0c0c0c;
+            --main-color: #ceb979;
+            --text-light: #e0e0e0;
+            --font-stack: 'Oswald', 'oswald';
+        }
+
+        /* Prevent scrolling and set up full-screen */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        /* --- One-Page Moving Image Background Container --- */
+        .one-page-container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            background: var(--bg-color); /* Fallback color */
+            
+            /* Background Image with subtle motion */
+            background-image: url('https://img.freepik.com/premium-photo/blurred-lights-new-york-city-night-view_961875-44181.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: bg-pan 60s linear infinite alternate;
+        }
+
+        /* An overlay to make text more readable and contribute to a sleek look */
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 1);
+            z-index: -1;
+        }
+
+        /* The blurred text box behind all content */
+        .text-box-overlay {
+            background-color: rgba(0, 0, 0, 0.62);
+            backdrop-filter: blur(5px);
+            border-radius: 50px; /* More rounded corners */
+            padding: 2rem;
+            max-width: 90%;
+            position: relative; /* Essential for transform animation */
+            z-index: 10;
+            animation: float 4s ease-in-out infinite; /* Added a subtle floating animation */
+        }
+        
+        /* --- Text and Content Styling --- */
+        .hero h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: var(--main-color);
+            text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
+            animation: glow 1.5s infinite alternate;
+            margin-bottom: 0;
+            transform: translateY(-25px);
+        }
+
+        .hero h3 {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 400;
+            margin-top: 10px;
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        .marketing-text {
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+            max-width: 800px;
+            margin: 10px auto;
+            color: var(--text-light);
+        }
+
+        .marketing-text.highlight {
+            color: var(--main-color);
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
+        }
+        
+        .evil-eye-text {
+            margin-top: 20px;
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            opacity: 1;
+        }
+
+        .hero-content img {
+    margin-bottom: 0px !important;
+}
+        
+        /* --- Footer --- */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            opacity: 0.5;
+            color: var(--text-light);
+        }
+
+        /* --- Animations --- */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px var(--main-color), 0 0 10px var(--main-color);
+            }
+            100% {
+                text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 30px var(--main-color);
+            }
+        }
+        
+        @keyframes bg-pan {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        @keyframes float {
+            0% { transform: translatey(0px); }
+            50% { transform: translatey(-10px); }
+            100% { transform: translatey(0px); }
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="one-page-container">
+        
+        <div class="image-overlay"></div>
+     <div class="text-box-overlay">
+    <header class="hero">
+        <div class="hero-content">
+                <img src="WEB/eye.png" alt="Evil Eye Logo" style="width:400px; height: auto; display:block; margin: 0 auto 0px auto; transform: translateX(-7px);">
+            <h2>I See You NYC</h2>
+            <h3>Your spark, unleashed.</h3>
+        </div>
+    </header>
+
+    <section class="marketing-section">
+        <div class="container">
+            <p class="marketing-text">i see you.</p>
+            <p class="marketing-text"> i see the spark that's missing.</p>
+            <p class="marketing-text">i see the energy you need.</p>
+            <p class="marketing-text highlight">coming soon.</p>
+            <p class="marketing-text">All socials @i.see.you.nyc</p>
+        </div>
+    </section>
+</div>
+
+            <footer>
+                <p>&copy; 2025 / I See You NYC</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
