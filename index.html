@@ -6,14 +6,14 @@
     <title>I See You NYC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
             --bg-color: #0c0c0c;
             --main-color: #ceb979;
             --text-light: #e0e0e0;
-            --font-stack: 'Special Elite', cursive;
+            --font-stack: 'Space Mono', monospace;
         }
 
         html, body {
@@ -74,6 +74,7 @@
 
         .hero h2 {
             font-size: clamp(2rem,5vw,3rem);
+
             font-weight: 700;
             text-transform: lowercase;
             letter-spacing: 10px;
@@ -103,7 +104,8 @@
             max-width: 350px;
             width: 100%;
             height: auto;
-            padding-bottom: 50px;
+            padding-bottom: 40px;
+
         }
 
         .marketing-text {
@@ -122,13 +124,13 @@
 
         /* Fixed form spacing */
         .input-group {
-            margin-bottom: 2rem; /* space between fields */
+            margin-bottom: 2rem;
         }
 
         .input-group label {
             display: block;
             text-align: left;
-            margin-bottom: 0.5rem; /* smaller space between label text and input */
+            margin-bottom: 0.5rem;
             margin-left: 1rem;
             font-size: 1rem;
             text-transform: lowercase;
@@ -174,8 +176,9 @@
             cursor: pointer;
             transition: all 0.3s ease;
             display: block;
-            margin: 1rem auto 0 auto; /* center button and give space above */
+            margin: 1rem auto 0 auto;
             font-family: var(--font-stack);
+              animation: pulse 1.5s infinite alternate;
         }
 
         .btn-submit:hover {
@@ -208,10 +211,15 @@
             100% { transform: translatey(0px); }
         }
 
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0px var(--main-color); }
+            100% { box-shadow: 0 0 40px var(--main-color); }
+        }
+
         @media (max-width: 600px) {
             .evil-eye-logo { max-width: 150px; }
             .input-group {
-                margin-bottom: 1.5rem; /* slightly less spacing on small screens */
+                margin-bottom: 1.5rem;
             }
             .input-group label {
                 margin-bottom: 0.4rem;
