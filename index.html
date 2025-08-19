@@ -20,7 +20,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Fix 1: Removes scroll bar */
+            overflow: hidden;
         }
 
         body {
@@ -54,7 +54,7 @@
         }
 
         .container {
-            height: 100vh; /* Fix 2: Centers the box vertically */
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -76,10 +76,10 @@
             font-size: clamp(2rem,5vw,3rem);
             font-weight: 700;
             text-transform: lowercase;
+
             letter-spacing: 10px;
             color: var(--main-color);
             margin: 0;
-            transform: translateY(-25px);
             text-shadow: 
                 0 0 10px var(--main-color),
                 0 0 20px var(--main-color),
@@ -91,15 +91,15 @@
         .hero h3 {
             font-size: clamp(1rem,2vw,1.5rem);
             font-weight: 400;
-            margin-top: 10px;
+            margin-top: 5px; /* Adjusted from 10px to 5px */
             color: var(--text-light);
             opacity: 0.8;
         }
 
         .evil-eye-logo {
             display: block;
-            margin: 0 auto 5px auto;
-            max-width: 230px;
+            margin: -40px auto -50px auto;
+            max-width: 300px;
             width: 100%;
             height: auto;
         }
@@ -125,7 +125,7 @@
             display: block;
             text-align: left;
             margin-bottom: 0.25rem;
-            font-size: .8 rem;
+            font-size: 0.8rem;
             text-transform: lowercase;
             letter-spacing: 2px;
             color: var(--main-color);
@@ -133,13 +133,13 @@
 
         .input-group input, .input-group textarea {
             width: 100%;
-            padding: 0.5 rem;
+            padding: 0.5rem;
             border-radius: 9999px;
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
             color: var(--text-light);
             font-family: var(--font-stack);
-            font-size: 1rem;
+            font-size: .5rem;
             transition: all 0.3s ease;
         }
 
@@ -229,7 +229,7 @@
             </form>
 
             <footer>
-                          <p class="marketing-text">All socials @i.see.you.nyc</p>
+                <p class="marketing-text">All socials @i.see.you.nyc</p>
                 <p>&copy; 2025 I See You NYC</p>
             </footer>
         </div>
