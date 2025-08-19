@@ -163,10 +163,10 @@
             color: var(--main-color);
         }
 
-        .input-group input {
+        .input-group input, .input-group textarea {
             width: 100%;
             padding: 0.75rem;
-            border-radius: 9999px; /* Full rounded corners */
+            border-radius: 9999px; /* Full rounded corners for input */
             background-color: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: var(--text-light);
@@ -174,8 +174,14 @@
             font-size: 1rem;
             transition: all 0.3s ease;
         }
+
+        .input-group textarea {
+            border-radius: 1rem; /* Adjusting the radius for text area */
+            height: 100px; /* Setting a fixed height for the message box */
+            resize: vertical; /* Allow vertical resizing only */
+        }
         
-        .input-group input:focus {
+        .input-group input:focus, .input-group textarea:focus {
             outline: none;
             border-color: var(--main-color);
             box-shadow: 0 0 0 2px rgba(206, 185, 121, 0.5);
@@ -272,7 +278,6 @@
                     <p class="marketing-text">i see the energy you need.</p>
                     <p class="marketing-text highlight">coming soon.</p>
                     <p class="marketing-text">All socials @i.see.you.nyc</p>
-                    <p id="message-box" class="marketing-text" style="display: none;"></p>
                 </div>
             </section>
 
@@ -284,9 +289,6 @@
                 <div class="input-group">
                     <label>Your Email: <input type="email" name="email"></label>
                 </div>
-                <div class="input-group">
-                    <label>Your Message: <textarea name="message"></textarea></label>
-                </div>
                 <button type="submit" class="btn-submit">Send</button>
             </form>
 
@@ -297,17 +299,8 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const messageBox = document.getElementById('message-box');
-            
-            // The form will automatically redirect to a Formspree thank-you page after submission.
-            // We've removed the custom JavaScript submission handler for simplicity and reliability.
-            
-            // Function to show messages to the user
-            function showMessage(message, isSuccess) {
-                messageBox.textContent = message;
-                messageBox.style.color = isSuccess ? 'var(--main-color)' : 'red';
-                messageBox.style.display = 'block';
-            }
+            // No JavaScript is needed here since the form is a standard HTML form
+            // that submits directly to the Formspree URL.
         });
     </script>
 </body>
