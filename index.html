@@ -277,16 +277,17 @@
             </section>
 
             <!-- The form is now always visible on the page -->
-            <form id="contact-form" class="mt-8" action="https://formspree.io/f/your-form-endpoint" method="POST">
+            <form  action="https://formspree.io/f/xblkvopr"  method="POST" class="mt-8" id="contact-form">
                 <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label>Your Name: <input type="text" name="name"></label>
                 </div>
                 <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label>Your Email: <input type="email" name="email"></label>
                 </div>
-                <button type="submit" class="btn-submit">Connect</button>
+                <div class="input-group">
+                    <label>Your Message: <textarea name="message"></textarea></label>
+                </div>
+                <button type="submit" class="btn-submit">Send</button>
             </form>
 
             <footer>
