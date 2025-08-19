@@ -6,14 +6,14 @@
     <title>I See You NYC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
             --bg-color: #0c0c0c;
             --main-color: #ceb979;
             --text-light: #e0e0e0;
-            --font-stack: 'Oswald', sans-serif;
+            --font-stack: 'Special Elite', cursive;
         }
 
         html, body {
@@ -76,7 +76,6 @@
             font-size: clamp(2rem,5vw,3rem);
             font-weight: 700;
             text-transform: lowercase;
-
             letter-spacing: 10px;
             color: var(--main-color);
             margin: 0;
@@ -86,28 +85,32 @@
                 0 0 30px rgba(0,0,0,0.8),
                 0 0 40px rgba(0,0,0,0.8);
             animation: glow 1.5s infinite alternate, black-glow 1.5s infinite alternate;
+            font-family: var(--font-stack);
         }
 
         .hero h3 {
             font-size: clamp(1rem,2vw,1.5rem);
             font-weight: 400;
-            margin-top: 5px; /* Adjusted from 10px to 5px */
+            margin-top: 5px;
             color: var(--text-light);
             opacity: 0.8;
+            font-family: var(--font-stack);
         }
 
         .evil-eye-logo {
             display: block;
             margin: -40px auto -50px auto;
-            max-width: 300px;
+            max-width: 330px;
             width: 100%;
             height: auto;
+            padding-bottom: 20px;
         }
 
         .marketing-text {
             font-size: clamp(0.9rem,1.5vw,1.2rem);
             max-width: 800px;
             margin: 10px auto;
+            font-family: var(--font-stack);
         }
 
         .marketing-text.highlight {
@@ -117,29 +120,32 @@
             margin-top: 20px;
         }
 
+        /* Fixed form spacing */
         .input-group {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem; /* space between fields */
         }
 
         .input-group label {
             display: block;
             text-align: left;
-            margin-bottom: 0.25rem;
-            font-size: 0.8rem;
+            margin-bottom: 0.5rem; /* smaller space between label text and input */
+            margin-left: 1rem;
+            font-size: 1rem;
             text-transform: lowercase;
             letter-spacing: 2px;
             color: var(--main-color);
+            font-family: var(--font-stack);
         }
 
         .input-group input, .input-group textarea {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.7rem 1rem;
             border-radius: 9999px;
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
             color: var(--text-light);
             font-family: var(--font-stack);
-            font-size: .5rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
 
@@ -156,17 +162,20 @@
         }
 
         .btn-submit {
-            padding: 1rem 2.5rem;
+            padding: 0.2rem 1rem;
             background-color: var(--main-color);
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.1rem;
+            color: #000000;
+            font-weight: 400;
+            font-size: 1rem;
             text-transform: lowercase;
             letter-spacing: 2px;
             border-radius: 9999px;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: block;
+            margin: 1rem auto 0 auto; /* center button and give space above */
+            font-family: var(--font-stack);
         }
 
         .btn-submit:hover {
@@ -180,6 +189,7 @@
             opacity: 0.5;
             color: var(--text-light);
             font-size: 0.8rem;
+            font-family: var(--font-stack);
         }
 
         @keyframes glow {
@@ -200,6 +210,12 @@
 
         @media (max-width: 600px) {
             .evil-eye-logo { max-width: 150px; }
+            .input-group {
+                margin-bottom: 1.5rem; /* slightly less spacing on small screens */
+            }
+            .input-group label {
+                margin-bottom: 0.4rem;
+            }
         }
     </style>
 </head>
@@ -220,10 +236,12 @@
 
             <form action="https://formspree.io/f/xblkvopr" method="POST" id="contact-form">
                 <div class="input-group">
-                    <label>Name: <input type="text" name="name"></label>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Your Name">
                 </div>
                 <div class="input-group">
-                    <label>Email: <input type="email" name="email"></label>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="you@example.com">
                 </div>
                 <button type="submit" class="btn-submit">Send</button>
             </form>
