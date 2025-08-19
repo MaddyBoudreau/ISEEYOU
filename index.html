@@ -20,6 +20,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Fix 1: Removes scroll bar */
         }
 
         body {
@@ -53,7 +54,7 @@
         }
 
         .container {
-            min-height: 100vh;
+            height: 100vh; /* Fix 2: Centers the box vertically */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -74,7 +75,7 @@
         .hero h2 {
             font-size: clamp(2rem,5vw,3rem);
             font-weight: 700;
-            text-transform: uppercase;
+            text-transform: lowercase;
             letter-spacing: 10px;
             color: var(--main-color);
             margin: 0;
@@ -98,7 +99,7 @@
         .evil-eye-logo {
             display: block;
             margin: 0 auto 5px auto;
-            max-width: 200px;
+            max-width: 230px;
             width: 100%;
             height: auto;
         }
@@ -124,15 +125,15 @@
             display: block;
             text-align: left;
             margin-bottom: 0.25rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            font-size: .8 rem;
+            text-transform: lowercase;
             letter-spacing: 2px;
             color: var(--main-color);
         }
 
         .input-group input, .input-group textarea {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.5 rem;
             border-radius: 9999px;
             background-color: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
@@ -160,7 +161,7 @@
             color: #fff;
             font-weight: 700;
             font-size: 1.1rem;
-            text-transform: uppercase;
+            text-transform: lowercase;
             letter-spacing: 2px;
             border-radius: 9999px;
             border: none;
@@ -178,6 +179,7 @@
             padding: 10px;
             opacity: 0.5;
             color: var(--text-light);
+            font-size: 0.8rem;
         }
 
         @keyframes glow {
@@ -207,27 +209,27 @@
             <header class="hero">
                 <img class="evil-eye-logo" src="WEB/eye.PNG" alt="Evil Eye Logo">
                 <h2>I See You NYC</h2>
-                <h3>Your spark, unleashed.</h3>
+                <h3>your spark, unleashed.</h3>
             </header>
 
             <section class="marketing-section">
                 <p class="marketing-text">i see you. i see the spark that's missing.</p>
                 <p class="marketing-text">i see the energy you need.</p>
                 <p class="marketing-text highlight">coming soon.</p>
-                <p class="marketing-text">All socials @i.see.you.nyc</p>
             </section>
 
             <form action="https://formspree.io/f/xblkvopr" method="POST" id="contact-form">
                 <div class="input-group">
-                    <label>Your Name: <input type="text" name="name"></label>
+                    <label>Name: <input type="text" name="name"></label>
                 </div>
                 <div class="input-group">
-                    <label>Your Email: <input type="email" name="email"></label>
+                    <label>Email: <input type="email" name="email"></label>
                 </div>
                 <button type="submit" class="btn-submit">Send</button>
             </form>
 
             <footer>
+                          <p class="marketing-text">All socials @i.see.you.nyc</p>
                 <p>&copy; 2025 I See You NYC</p>
             </footer>
         </div>
