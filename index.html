@@ -27,6 +27,7 @@
             font-family: var(--font-stack);
             color: var(--text-light);
             line-height: 1.5;
+            min-height: 100vh;
         }
 
         /* Background image */
@@ -35,7 +36,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 100%;
+            height: 100vh;
             width: 100%;
             background: url('https://static.vecteezy.com/system/resources/previews/001/432/847/large_2x/blurred-city-lights-free-photo.jpeg') center/cover no-repeat;
             z-index: -2;
@@ -47,7 +48,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 100%;
+            height: 100vh;
             width: 100%;
             background: rgba(0,0,0,0.5);
             z-index: -1;
@@ -61,6 +62,7 @@
             align-items: center;
             text-align: center;
             padding: 1rem;
+            box-sizing: border-box;
         }
 
         .text-box {
@@ -74,7 +76,6 @@
 
         .hero h2 {
             font-size: clamp(2rem,5vw,3rem);
-
             font-weight: 700;
             text-transform: lowercase;
             letter-spacing: 10px;
@@ -105,7 +106,7 @@
             width: 100%;
             height: auto;
             padding-bottom: 40px;
-
+            animation: pulse 2s infinite alternate;
         }
 
         .marketing-text {
@@ -178,7 +179,6 @@
             display: block;
             margin: 1rem auto 0 auto;
             font-family: var(--font-stack);
-              animation: pulse 1.5s infinite alternate;
         }
 
         .btn-submit:hover {
@@ -191,7 +191,7 @@
             padding: 10px;
             opacity: 0.5;
             color: var(--text-light);
-            font-size: 0.5rem;
+            font-size: 0.8rem;
             font-family: var(--font-stack);
         }
 
@@ -255,7 +255,7 @@
             </form>
 
             <footer>
-                <p class="marketing-text">All socials: i.see.you.nyc</p>
+                <p class="marketing-text">All socials @i.see.you.nyc</p>
                 <p>&copy; 2025 I See You NYC</p>
             </footer>
         </div>
