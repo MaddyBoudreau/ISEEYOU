@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
     <title>I See You NYC</title>
     <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#000000">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -74,12 +73,12 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Changed to move content to the top */
             align-items: center;
             text-align: center;
             padding: .1rem;
             box-sizing: border-box;
-            margin: 0 auto
+            margin: 0 auto;
         }
 
         .text-box {
@@ -124,20 +123,17 @@
             max-width: 350px;
             width: 100%;
             height: auto;
-
         }
 
         /* New CSS for the blinking effect */
-       /* ...existing code... */
-.blinking-eye-container {
-    position: relative;
-    margin: 0rem auto 0rem auto; /* Reduced top/bottom margin */
-    max-width: 350px; /* Slightly smaller max-width */
-    width: 100%;
-    height: 15rem;    /* Reduced height */
-    padding: 0;       /* Remove extra padding */
-}
-/* ...existing code... */
+        .blinking-eye-container {
+            position: relative;
+            margin: 0rem auto 0rem auto;
+            max-width: 350px;
+            width: 100%;
+            height: 15rem;
+            padding: 0;
+        }
         
         .eye-top, .eye-bottom {
             width: 100%;
@@ -153,14 +149,14 @@
         .eye-top {
             top: 0;
             clip-path: inset(0 0 50% 0);
-            animation: blink-top 3s infinite; /* Faster animation */
+            animation: blink-top 3s infinite;
             margin: 0px;
         }
         
         .eye-bottom {
             bottom: 0;
             clip-path: inset(50% 0 0 0);
-            animation: blink-bottom 3s infinite; /* Faster animation */
+            animation: blink-bottom 3s infinite;
             margin: 0px;
         }
 
